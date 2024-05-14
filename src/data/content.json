@@ -1,0 +1,243 @@
+{
+    "pages":{
+        "shop":{
+            "sections":[
+                {
+                    "title":"Categories For Women",
+                    "data":[
+                        {
+                            "title":"Hoodies & Sweetshirt",
+                            "description":"Explore Now!",
+                            "image":"./images/category-women-hoodies.jpg"   
+                        },
+                        {
+                            "title":"Coats & Parkas",
+                            "description":"Explore Now!",
+                            "image":"./images/category-women-coats.jpg"   
+                        },
+                        {
+                            "title":"Tees & T-Shirt",
+                            "description":"Explore Now!",
+                            "image":"./images/category-women-tshirts.png"   
+                        },
+                        {
+                            "title":"Shorts",
+                            "description":"Explore Now!",
+                            "image":"./images/category-women-shorts.jpg"   
+                        }
+                    ]
+                },
+                {
+                    "title":"Categories For Men",
+                    "data":[
+                        {
+                            "title":"Shirts",
+                            "description":"Explore Now!",
+                            "image":"./images/category-men-shirts.jpg"   
+                        },
+                        {
+                            "title":"Jeans",
+                            "description":"Explore Now!",
+                            "image":"./images/category-men-jeans.jpg"   
+                        },
+                        {
+                            "title":"Hoodies & Sweetshirt",
+                            "description":"Explore Now!",
+                            "image":"./images/category-men-hoodies.png"   
+                        },
+                        {
+                            "title":"T-Shirts",
+                            "description":"Explore Now!",
+                            "image":"./images/category-men-tshirts.png"   
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "footer":{
+        "items":[
+            {
+                "title":"Need Help",
+                "list":[
+                    {
+                        "label":"Contact Us",
+                        "path":"/contact-us"
+                    },
+                    {
+                        "label":"Track Order",
+                        "path":"/track-order"
+                    },
+                    {
+                        "label":"Returns & Refunds",
+                        "path":"/refunds"
+                    },
+                    {
+                        "label":"FAQ's",
+                        "path":"/faq"
+                    },
+                    {
+                        "label":"Career",
+                        "path":"/career"
+                    }
+                ]
+            },
+            {
+                "title":"Company",
+                "list":[
+                    {
+                        "label":"About Us",
+                        "path":"/about"
+                    },
+                    {
+                        "label":"Media",
+                        "path":"/media"
+                    }
+                ]
+            },
+            {
+                "title":"More Info",
+                "list":[
+                    {
+                        "label":"Term and Conditions",
+                        "path":"/terms-conditions"
+                    },
+                    {
+                        "label":"Privacy Policy",
+                        "path":"/policies"
+                    },
+                    {
+                        "label":"Shipping Policy",
+                        "path":"/policies"
+                    }
+                ]
+            },
+            {
+                "title":"Location",
+                "description":"Location Country"
+            }
+        ],
+        "copyright":"Copyright © 2024 ShopEase"
+    },
+    "categories": [
+        {
+          "id": 1,
+          "name": "Men",
+          "code": "MEN",
+          "description":"Men's Clothing",
+          "types": [
+            {
+              "id": 1,
+              "name": "Jeans",
+              "description": "Men's jeans"
+            },
+            {
+              "id": 2,
+              "name": "Shirts",
+              "description": "Men's shirts"
+            },
+            {
+              "id": 3,
+              "name": "Shorts",
+              "description": "Men's shorts"
+            },
+            {
+              "id": 4,
+              "name": "T-shirts",
+              "description": "Men's t-shirts"
+            }
+          ],
+          "meta_data":{
+            "colors":["Black", "White", "Purple", "Gray", "Blue","Red","Orange","Navy","Grey","Yellow","Pink","Green"],
+            "sizes":["S","M","L","XL","XXL"]
+          }
+        },
+        {
+          "id": 2,
+          "name": "Women",
+          "code": "WOMEN",
+          "description":"Women's Clothing",
+          "types": [
+            {
+              "type_id": 5,
+              "code":"DRESSES",
+              "name": "Dresses"
+            },
+            {
+              "type_id": 6,
+              "code":"CROPTOP",
+              "name": "Crop Top"
+            },
+            {
+              "type_id": 7,
+              "code":"SHORTS",
+              "name": "Shorts"
+            },
+            {
+              "type_id": 8,
+              "code":"JEANS",
+              "name": "Jeans"
+            },
+            {
+              "type_id": 9,
+              "code":"TSHIRTS",
+              "name": "T-shirt"
+            },
+            {
+              "type_id": 10,
+              "code":"SWEATSHIRT",
+              "name": "Hoodie/Sweatshirt"
+            },
+            {
+              "type_id": 11,
+              "code":"TOPS",
+              "name": "Tops"
+            },
+            {
+              "type_id": 12,
+              "code":"BOXERS",
+              "name": "Boxers"
+            },
+            {
+              "type_id": 13,
+              "code":"KURTIS",
+              "name": "Kurtis"
+            }
+          ],
+          "meta_data":{
+            "colors":["Black", "White", "Purple", "Gray", "Blue","Red","Orange","Navy","Grey","Yellow","Pink","Green"],
+            "sizes":["S","M","L","XL","XXL"]
+          }
+        },
+        {
+          "id": 3,
+          "name": "Kids",
+          "code": "KIDS",
+          "description":"Kids Clothing",
+          "types": [
+            {
+              "id": 15,
+              "name": "T-shirts",
+              "description": "Kids' t-shirts"
+            },
+            {
+              "id": 16,
+              "name": "Shorts",
+              "description": "Kids' shorts"
+            },
+            {
+              "id": 17,
+              "name": "Dresses",
+              "description": "Kids' dresses"
+            },
+            {
+              "id": 18,
+              "name": "Jeans",
+              "description": "Kids' jeans"
+            }
+          ],
+          "meta_data":{}
+        }
+      ]
+
+}
