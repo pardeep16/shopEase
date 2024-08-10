@@ -7,7 +7,7 @@ const ProductCard = ({id,title,description,price,discoutnt,rating,brand,thumbnai
     <div className='flex flex-col hover:scale-105 relative'>
       <Link to={`/product/${id}`}>
         <img className={`h-[320px] w-[280px]
-         border rounded-lg cursor-pointer object-cover block`} src={thumbnail} alt='Jeans'/>
+         border rounded-lg cursor-pointer object-cover block`} src={thumbnail} alt={title}/>
          </Link>
          
          <div className='flex justify-between items-center'>
