@@ -6,13 +6,19 @@ import reportWebVitals from './reportWebVitals';
 import 'react-multi-carousel/lib/styles.css';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './routes';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <RouterProvider router={router}>
-    <Shop />
+      
+        <Shop />
+      
     </RouterProvider>
+    </Provider>
   </React.StrictMode>
 );
 
