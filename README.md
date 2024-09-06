@@ -32,16 +32,16 @@ This project is under active development. Below is a list of features that have 
 - [ ] Responsive design improvements
 
 ### Backend
-- [ ] Set up Spring Boot project
-- [ ] Implement basic product API
+- [X] Set up Spring Boot project
+- [X] Implement basic product API
 - [ ] User authentication and authorization with JWT
 - [ ] Order processing and management
 - [ ] Integration with payment gateway
 - [ ] Admin dashboard for product/order management
 
 ### Database
-- [ ] Create PostgreSQL database schema
-- [ ] Set up entity relationships (products, users, orders)
+- [X] Create PostgreSQL database schema
+- [X] Set up entity relationships (products, users, orders)
 - [ ] Seed database with initial data
 
 ### Other
