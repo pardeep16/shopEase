@@ -42,6 +42,9 @@ public class Product {
     @Column(nullable = false)
     private boolean isNewArrival;
 
+    @Column(nullable = false,unique = true)
+    private String slug;
+
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date createdAt;

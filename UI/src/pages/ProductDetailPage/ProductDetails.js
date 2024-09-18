@@ -13,9 +13,10 @@ import SectionHeading from '../../components/Sections/SectionsHeading/SectionHea
 import ProductCard from '../ProductListPage/ProductCard';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../store/features/cart';
+import _ from 'lodash';
+import { getAllProducts } from '../../api/fetchProducts';
 
-
-const categories = content?.categories;
+//const categories = content?.categories;
 
 const extraSections = [
   {
@@ -42,27 +43,33 @@ const ProductDetails = () => {
   const [breadCrumbLinks, setBreadCrumbLink] = useState([]);
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cartState?.cart);
+  const [similarProduct,setSimilarProducts] = useState([]);
+  const categories = useSelector((state)=> state?.categoryState?.categories);
 
-  console.log("Cart items ",cartItems);
-
-  const similarProducts = useMemo(()=>{
-    return content?.products?.filter((item)=> (item?.type_id === product?.type_id && item?.id !== product?.id));
-  },[product]);
 
   const productCategory = useMemo(() => {
-    return categories?.find((category) => category?.id === product?.category_id);
-  }, [product]);
+    return categories?.find((category) => category?.id === product?.categoryId);
+  }, [product,categories]);
+
+  useEffect(()=>{
+    getAllProducts(product?.categoryId,product?.categoryTypeId).then(res=>{
+      const excludedProduct = res?.filter((item)=> item?.id !== product?.id);
+      setSimilarProducts(excludedProduct);
+    }).catch(()=>[
+      
+    ])
+  },[product?.categoryId, product?.categoryTypeId, product?.id]);
 
   useEffect(() => {
-    setImage(product?.images[0]?.startsWith('http') ? product?.images[0] : product?.thumbnail);
+    setImage(product?.thumbnail);
     setBreadCrumbLink([]);
     const arrayLinks = [{ title: 'Shop', path: '/' }, {
       title: productCategory?.name,
-      path: productCategory?.path
+      path: productCategory?.name
     }];
-    const productType = productCategory?.types?.find((item) => item?.type_id === product?.type_id);
-    console.log("product type ", productType, productCategory);
-    if (productType) {
+    const productType = productCategory?.categoryTypes?.find((item)=> item?.id === product?.categoryTypeId);
+    
+    if(productType){
       arrayLinks?.push({
         title: productType?.name,
         path: productType?.name
@@ -73,7 +80,19 @@ const ProductDetails = () => {
 
   const addItemToCart = useCallback(()=>{
     //dispatch(addToCart({id:product?.id,quantity:1}));
-  },[dispatch, product?.id]);
+  },[]);
+
+  const colors = useMemo(()=>{
+    const colorSet = _.uniq(_.map(product?.variants,'color'));
+    return colorSet
+
+  },[product]);
+
+  const sizes = useMemo(()=>{
+    const sizeSet = _.uniq(_.map(product?.variants,'size'));
+    return sizeSet
+
+  },[product]);
 
 
   return (
@@ -86,8 +105,8 @@ const ProductDetails = () => {
             {/* Stack images */}
             <div className='flex flex-row md:flex-col justify-center h-full'>
               {
-                product?.images[0]?.startsWith('http') && product?.images?.map((item, index) => (
-                  <button key={index} onClick={() => setImage(item)} className='rounded-lg w-fit p-2 mb-2'><img src={item} className='h-[60px] w-[60px] rounded-lg bg-cover bg-center hover:scale-105 hover:border' alt={'sample-' + index} /></button>
+                product?.productResources?.map((item, index) => (
+                  <button key={index} onClick={() => setImage(item?.url)} className='rounded-lg w-fit p-2 mb-2'><img src={item?.url} className='h-[60px] w-[60px] rounded-lg bg-cover bg-center hover:scale-105 hover:border' alt={'sample-' + index} /></button>
                 ))
               }
             </div>
@@ -95,7 +114,7 @@ const ProductDetails = () => {
           </div>
           <div className='w-full md:w-[80%] flex justify-center md:pt-0 pt-10'>
             <img src={image} className='h-full w-full max-h-[520px]
-         border rounded-lg cursor-pointer object-cover' alt={product?.title} />
+         border rounded-lg cursor-pointer object-cover' alt={product?.name} />
           </div>
         </div>
 
@@ -103,7 +122,7 @@ const ProductDetails = () => {
       <div className='w-[60%] px-10'>
         {/* Product Description */}
         <Breadcrumb links={breadCrumbLinks} />
-        <p className='text-3xl pt-4'>{product?.title}</p>
+        <p className='text-3xl pt-4'>{product?.name}</p>
         <Rating rating={product?.rating} />
         {/* Price Tag */}
         <p className='text-xl bold py-2'>${product?.price}</p>
@@ -113,10 +132,10 @@ const ProductDetails = () => {
             <Link className='text-sm text-gray-500 hover:text-gray-900' to={'https://en.wikipedia.org/wiki/Clothing_sizes'} target='_blank'>{'Size Guide ->'}</Link>
           </div>
         </div>
-        <div className='mt-2'><SizeFilter sizes={product?.size} hidleTitle /></div>
+        <div className='mt-2'><SizeFilter sizes={sizes} hidleTitle multi={false}/></div>
         <div>
           <p className='text-lg bold'>Colors Available</p>
-          <ProductColors colors={product?.color} />
+          <ProductColors colors={colors} />
         </div>
         <div className='flex py-4'>
          {!cartItems?.length >0 ? <button onClick={addItemToCart} className='bg-black rounded-lg hover:bg-gray-700'><div className='flex h-[42px] rounded-lg w-[150px] px-2 items-center justify-center bg-black text-white hover:bg-gray-700'><svg width="17" height="16" className='' viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -143,17 +162,17 @@ const ProductDetails = () => {
     <SectionHeading title={'Product Description'}/>
     <div className='md:w-[50%] w-full p-2'>
     
-    <p className='px-8'>{product.description}</p>
+    <p className='px-8'>{product?.description}</p>
     </div>
 
     <SectionHeading title={'Similar Products'}/>
     <div className='flex px-10'>
     
     <div className='pt-4 grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-8 px-2 pb-10'>
-                {similarProducts?.map((item,index)=>(
+                {similarProduct?.map((item,index)=>(
                   <ProductCard key={index} {...item}/>
                 ))}
-                {!similarProducts?.length && <p>No Products Found!</p>}
+                {!similarProduct?.length && <p>No Products Found!</p>}
                 </div>
     </div>
     </>
