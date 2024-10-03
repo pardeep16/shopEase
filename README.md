@@ -27,14 +27,14 @@ This project is under active development. Below is a list of features that have 
 - [X] Pages Navigation & Categories Page with Filters
 - [X] Product Detail Page
 - [ ] Shopping cart functionality
-- [ ] User authentication (sign-up, login, logout)
+- [X] User authentication (sign-up, login, logout)
 - [ ] Checkout process
 - [ ] Responsive design improvements
 
 ### Backend
 - [X] Set up Spring Boot project
 - [X] Implement basic product API
-- [ ] User authentication and authorization with JWT
+- [X] User authentication and authorization with JWT
 - [ ] Order processing and management
 - [ ] Integration with payment gateway
 - [ ] Admin dashboard for product/order management
@@ -42,10 +42,10 @@ This project is under active development. Below is a list of features that have 
 ### Database
 - [X] Create PostgreSQL database schema
 - [X] Set up entity relationships (products, users, orders)
-- [ ] Seed database with initial data
+- [X] Seed database with initial data
 
 ### Other
-- [ ] API documentation
+- [X] API documentation
 - [ ] Unit and integration testing
 - [ ] Deployment scripts and CI/CD setup
 
