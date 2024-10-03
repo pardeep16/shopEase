@@ -8,7 +8,6 @@ import AuthenticationWrapper from "./pages/AuthenticationWrapper";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import OAuth2LoginCallback from "./pages/OAuth2LoginCallback";
-import Cart from "./pages/Cart/Cart";
 import Account from "./pages/Account/Account";
 
 
