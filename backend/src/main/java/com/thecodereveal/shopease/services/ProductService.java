@@ -17,4 +17,6 @@ public interface ProductService {
     ProductDto getProductById(UUID id);
 
     Product updateProduct(ProductDto productDto);
+
+    Product fetchProductById(UUID uuid) throws Exception;
 }
