@@ -26,17 +26,17 @@ This project is under active development. Below is a list of features that have 
 - [X] Create Mockup API Data (Content)
 - [X] Pages Navigation & Categories Page with Filters
 - [X] Product Detail Page
-- [ ] Shopping cart functionality
+- [X] Shopping cart functionality
 - [X] User authentication (sign-up, login, logout)
-- [ ] Checkout process
+- [X] Checkout process
 - [ ] Responsive design improvements
 
 ### Backend
 - [X] Set up Spring Boot project
 - [X] Implement basic product API
 - [X] User authentication and authorization with JWT
-- [ ] Order processing and management
-- [ ] Integration with payment gateway
+- [X] Order processing and management
+- [X] Integration with payment gateway
 - [ ] Admin dashboard for product/order management
 
 ### Database
@@ -46,8 +46,8 @@ This project is under active development. Below is a list of features that have 
 
 ### Other
 - [X] API documentation
-- [ ] Unit and integration testing
-- [ ] Deployment scripts and CI/CD setup
+- [X] Unit and integration testing (Optional)
+- [X] Deployment scripts and CI/CD setup
 
 ## Youtube Tutorials
 
