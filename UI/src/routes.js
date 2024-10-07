@@ -12,7 +12,6 @@ import Cart from "./pages/Cart/Cart";
 import Account from "./pages/Account/Account";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Checkout from "./pages/Checkout/Checkout";
-import PaymentPage from "./pages/PaymentPage/PaymentPage";
 import ConfirmPayment from "./pages/ConfirmPayment/ConfirmPayment";
 import OrderConfirmed from "./pages/OrderConfirmed/OrderConfirmed";
 
