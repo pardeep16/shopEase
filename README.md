@@ -15,8 +15,20 @@ Welcome to the Fullstack E-Commerce Shopping Project repository! This project is
 - **Build Tools**: Maven, Webpack
 
 
+## Videos
+- 1.https://youtu.be/p8tBD3YTCPo
+- 2.https://youtu.be/LdEO5nPOaa0
+- 3.https://youtu.be/4nGZQbY8QTI
+- 4.https://youtu.be/C-JTLiisKJ4
+- 5.https://youtu.be/ew4IhNzDkkE
+- 6.https://youtu.be/MutS1GVvCnQ
+- 7.https://youtu.be/ctcvf8sy2PI
+- 8.https://youtu.be/jan3L-PhQBM
+- 9.https://youtu.be/NFpnxve3rDY
+- 10.https://youtu.be/jetR7cQJKHM
+
 ## 🚧 Current Status
-This project is under active development. Below is a list of features that have been completed, are in progress, or are planned.
+Completed
 
 ## ✅ To-Do List
 
@@ -29,7 +41,6 @@ This project is under active development. Below is a list of features that have 
 - [X] Shopping cart functionality
 - [X] User authentication (sign-up, login, logout)
 - [X] Checkout process
-- [ ] Responsive design improvements
 
 ### Backend
 - [X] Set up Spring Boot project
