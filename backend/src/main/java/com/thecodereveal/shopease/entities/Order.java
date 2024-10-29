@@ -29,7 +29,7 @@ public class Order {
     @JsonIgnore
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "address_id",nullable = false)
     @ToString.Exclude
     @JsonIgnore

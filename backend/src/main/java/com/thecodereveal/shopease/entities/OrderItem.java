@@ -18,7 +18,7 @@ public class OrderItem {
     @GeneratedValue
     private UUID id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "product_id",nullable = false)
     @JsonIgnore
     private Product product;
