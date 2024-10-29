@@ -37,7 +37,7 @@ This project is under active development. Below is a list of features that have 
 - [X] User authentication and authorization with JWT
 - [X] Order processing and management
 - [X] Integration with payment gateway
-- [ ] Admin dashboard for product/order management
+- [X] Admin dashboard for product/order management
 
 ### Database
 - [X] Create PostgreSQL database schema
