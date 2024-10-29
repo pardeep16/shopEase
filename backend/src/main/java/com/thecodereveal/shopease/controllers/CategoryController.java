@@ -3,6 +3,7 @@ package com.thecodereveal.shopease.controllers;
 import com.thecodereveal.shopease.dto.CategoryDto;
 import com.thecodereveal.shopease.entities.Category;
 import com.thecodereveal.shopease.services.CategoryService;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,8 +28,9 @@ public class CategoryController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Category>> getAllCategories(){
+    public ResponseEntity<List<Category>> getAllCategories(HttpServletResponse response){
         List<Category> categoryList = categoryService.getAllCategory();
+        response.setHeader("Content-Range",String.valueOf(categoryList.size()));
         return new ResponseEntity<>(categoryList, HttpStatus.OK);
 
     }

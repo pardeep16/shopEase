@@ -3,6 +3,7 @@ package com.thecodereveal.shopease.controllers;
 import com.thecodereveal.shopease.dto.ProductDto;
 import com.thecodereveal.shopease.entities.Product;
 import com.thecodereveal.shopease.services.ProductService;
+import jakarta.servlet.http.HttpServletResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,7 +27,7 @@ public class ProductController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ProductDto>> getAllProducts(@RequestParam(required = false,name = "categoryId",value = "categoryId") UUID categoryId,@RequestParam(required = false,name = "typeId",value = "typeId") UUID typeId,@RequestParam(required = false) String slug ){
+    public ResponseEntity<List<ProductDto>> getAllProducts(@RequestParam(required = false,name = "categoryId",value = "categoryId") UUID categoryId, @RequestParam(required = false,name = "typeId",value = "typeId") UUID typeId, @RequestParam(required = false) String slug, HttpServletResponse response){
         List<ProductDto> productList = new ArrayList<>();
         if(StringUtils.isNotBlank(slug)){
             ProductDto productDto = productService.getProductBySlug(slug);
@@ -35,6 +36,7 @@ public class ProductController {
         else {
             productList = productService.getAllProducts(categoryId, typeId);
         }
+        response.setHeader("Content-Range",String.valueOf(productList.size()));
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
 
@@ -51,9 +53,9 @@ public class ProductController {
         return new ResponseEntity<>(product,HttpStatus.CREATED);
     }
 
-    @PutMapping
-    public ResponseEntity<Product> updateProduct(@RequestBody ProductDto productDto){
-        Product product = productService.updateProduct(productDto);
+    @PutMapping("/{id}")
+    public ResponseEntity<Product> updateProduct(@RequestBody ProductDto productDto,@PathVariable UUID id){
+        Product product = productService.updateProduct(productDto,id);
         return new ResponseEntity<>(product,HttpStatus.OK);
     }
 

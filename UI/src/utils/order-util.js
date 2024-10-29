@@ -25,3 +25,10 @@ export const createOrderRequest = (cartItems,userId,addressId)=>{
     return request;
 
 }
+
+export const getStepCount = {
+    'PENDING':1,
+    'IN_PROGRESS':2,
+    'SHIPPED':3,
+    'DELIVERED':4
+}

@@ -14,6 +14,10 @@ import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import Checkout from "./pages/Checkout/Checkout";
 import ConfirmPayment from "./pages/ConfirmPayment/ConfirmPayment";
 import OrderConfirmed from "./pages/OrderConfirmed/OrderConfirmed";
+import Profile from "./pages/Account/Profile";
+import Orders from "./pages/Account/Orders";
+import Settings from "./pages/Account/Settings";
+import { AdminPanel } from "./pages/AdminPanel/AdminPanel";
 
 
 export const router = createBrowserRouter([
@@ -43,8 +47,22 @@ export const router = createBrowserRouter([
          element: <Cart />
         },
         {
-          path:'/account-details',
-          element: <ProtectedRoute><Account /></ProtectedRoute>
+          path:'/account-details/',
+          element: <ProtectedRoute><Account /></ProtectedRoute>,
+          children:[
+            {
+              path:'profile',
+              element:<ProtectedRoute><Profile/></ProtectedRoute>
+            },
+            {
+              path:'orders',
+              element:<ProtectedRoute><Orders/></ProtectedRoute>
+            },
+            {
+              path:'settings',
+              element:<ProtectedRoute><Settings /></ProtectedRoute>
+            }
+          ]
          },
          {
           path:'/checkout',
@@ -77,5 +95,9 @@ export const router = createBrowserRouter([
     {
       path:'/confirmPayment',
       element:<ConfirmPayment />
+    },
+    {
+      path:'/admin/*',
+      element:<ProtectedRoute><AdminPanel /></ProtectedRoute>
     }
   ]);
