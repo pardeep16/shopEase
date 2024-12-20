@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "f31a17d5-9567-461f-b956-1f356e6b6b43",
+		"name": "shopEase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "756208"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endPoint}}/api/products",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Women's Skinny Jeans\",\r\n    \"slug\": \"womens-skinny-jeans-d821c40a\",\r\n    \"description\": \"Trendy women's skinny jeans for a stylish look\",\r\n    \"price\": 59.99,\r\n    \"brand\": \"ChicStyle\",\r\n    \"categoryId\": \"9a2bb8e0-d8dc-4332-b914-ceb4095b3640\",\r\n    \"categoryTypeId\": \"200557d7-9d51-4a2b-b2fb-b664913108c5\",\r\n    \"rating\": 4.8,\r\n    \"thumbnail\": \"https://codedev.b-cdn.net/products/jeans-blue.jpeg\",\r\n    \"variants\": [\r\n      { \"color\": \"Blue\", \"size\": \"S\", \"stockQuantity\": 1 },\r\n      { \"color\": \"Blue\", \"size\": \"M\", \"stockQuantity\": 1 },\r\n      { \"color\": \"Blue\", \"size\": \"L\", \"stockQuantity\": 1 }\r\n    ],\r\n    \"productResources\": [\r\n      {\r\n        \"name\": \"jeans-blue1.jpg\",\r\n        \"url\": \"https://codedev.b-cdn.net/products/jeans-blue1.jpg\",\r\n        \"type\": \"image\",\r\n        \"isPrimary\": true\r\n      },\r\n      {\r\n        \"name\": \"jeans-blue2.jpg\",\r\n        \"url\": \"https://codedev.b-cdn.net/products/jeans-blue2.jpg\",\r\n        \"type\": \"image\",\r\n        \"isPrimary\": false\r\n      }\r\n    ],\r\n    \"newArrival\": true\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endPoint}}/api/products",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endPoint}}/api/products?productId=",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"3bb694c1-86dd-4df8-b016-1da5f4de5ae7\",\r\n        \"name\": \"Purple Hoodie\",\r\n        \"description\": \"A cozy purple hoodie for women\",\r\n        \"price\": 69.99,\r\n        \"brand\": \"Nike\",\r\n        \"rating\": 4.6,\r\n        \"categoryId\": \"9a2bb8e0-d8dc-4332-b914-ceb4095b3640\",\r\n        \"thumbnail\": \"https://codedev.b-cdn.net/products/hoodie-purple.jpg\",\r\n        \"slug\": \"purple-hoodie-32d0f257\",\r\n        \"categoryName\": null,\r\n        \"categoryTypeId\": \"1b5bce66-604a-489f-a7d3-487ad1760302\",\r\n        \"categoryTypeName\": null,\r\n        \"variants\": [\r\n            {\r\n                \"id\": \"9aea7f38-3d2b-4757-beee-8186e8c6aa7b\",\r\n                \"color\": \"Purple\",\r\n                \"size\": \"S\",\r\n                \"stockQuantity\": 1\r\n            },\r\n            {\r\n                \"id\": \"19cb261e-a5b0-4ba7-8f11-61897545713e\",\r\n                \"color\": \"Purple\",\r\n                \"size\": \"M\",\r\n                \"stockQuantity\": 1\r\n            },\r\n            {\r\n                \"id\": \"bf2eb3d4-332b-4368-b898-c20eba98a01e\",\r\n                \"color\": \"Purple\",\r\n                \"size\": \"L\",\r\n                \"stockQuantity\": 1\r\n            }\r\n        ],\r\n        \"productResources\": [\r\n            {\r\n                \"id\": \"c5521c92-5e93-4f88-bf72-abd7a5089236\",\r\n                \"name\": \"hoodie-purple1.jpg\",\r\n                \"url\": \"https://codedev.b-cdn.net/products/hoodie-purple.jpg\",\r\n                \"type\": \"image\",\r\n                \"isPrimary\": true\r\n            },\r\n            {\r\n                \"id\": \"60a9fa55-283a-45f3-a9ac-a6f018f6e2e3\",\r\n                \"name\": \"hoodie-purple2.jpg\",\r\n                \"url\": \"https://codedev.b-cdn.net/products/hoodie-purple.jpg\",\r\n                \"type\": \"image\",\r\n                \"isPrimary\": false\r\n            }\r\n        ],\r\n        \"newArrival\": false\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endPoint}}/api/products",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{endPoint}}/api/category",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endPoint}}/api/category",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": \"eae057e4-46df-4c08-bc74-26be357690eb\",\r\n        \"categoryTypes\": [\r\n            {\r\n                \"id\": \"37d62cce-0558-4879-8a9f-830b7b9c5841\",\r\n                \"name\": \"Jeans\",\r\n                \"code\": \"JEANS\",\r\n                \"description\": \"Men's jeans\"\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endPoint}}/api/category/12",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endPoint}}/api/category/",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{endPoint}}/api/order",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order by User",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": []
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Pardeep\",\r\n  \"lastName\": \"K\",\r\n  \"password\": \"password\",\r\n  \"email\": \"pardeep.k@shopease.com\",\r\n  \"phoneNumber\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endPoint}}/api/auth/register",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Code",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "{{endPoint}}/api/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"pardeep.k@shopease.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endPoint}}/api/auth/login",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "User info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoYXBwIiwic3ViIjoicGFyZGVlcC5rQHNob3BlYXNlLmNvbSIsImlhdCI6MTcyNzY0Mzg2NiwiZXhwIjoxNzI3NjQ3NDY2fQ.5ZycgMAa1bb33ZfKaoy7NrMlqdwwPRtNrvcl6955_Ls",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endPoint}}/api/user/profile",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhdXRoYXBwIiwic3ViIjoiY29kZXJldmVhbC5hcHBAZ21haWwuY29tIiwiaWF0IjoxNzI3NDM5MTY5LCJleHAiOjE3Mjc0NDI3Njl9.WGfFG92VmI8PSv85kwfWBDY42Y6R-HUzXT1n19oe_k4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"street\": \"#2001 New Modern Enclave\",\r\n  \"city\": \"Gurgaon\",\r\n  \"state\": \"Haryana\",\r\n  \"zipCode\": \"123001\",\r\n  \"phoneNumber\": \"9999000090\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endPoint}}/api/address",
+							"host": [
+								"{{endPoint}}"
+							],
+							"path": [
+								"api",
+								"address"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "file",
+			"item": [
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
